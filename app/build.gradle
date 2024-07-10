@@ -1,0 +1,67 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+
+}
+
+android {
+    namespace 'com.example.calculatorapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.calculatorapp"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    implementation libs.gridlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    implementation libs.appcompat.v170
+    implementation libs.material.v1120
+
+    testImplementation libs.junit.jupiter.api
+    testRuntimeOnly libs.junit.jupiter.engine
+    implementation libs.appcompat.v131
+    implementation libs.material.v140
+
+    testImplementation libs.junit // Añadir JUnit 4 si es necesario para pruebas en Android
+
+    // Dependencias de JUnit 5
+    testImplementation libs.junit.jupiter.api.v581
+    testRuntimeOnly libs.junit.jupiter.engine.v581
+
+    // Dependencias de prueba para JUnit 5
+    testImplementation libs.junit.jupiter.api.v571
+    testRuntimeOnly libs.junit.jupiter.engine.v571
+    testImplementation libs.mockito.core
+
+    androidTestImplementation libs.espresso.core.v340
+
+}
+
+
